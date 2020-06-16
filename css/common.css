@@ -1,0 +1,64 @@
+/* Common CSS */
+.page a,
+.banner a {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .LP-DEVICE {
+    display: none;
+  }
+  .LP-DESKTOP {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .LP-DEVICE {
+    display: block;
+  }
+  .LP-DESKTOP {
+    display: none;
+  }
+}
+
+.lazyload,
+.lazyloading {
+  min-height: 300px;
+  min-height: 40vh;
+}
+
+img.lazyloaded {
+  -webkit-animation-name: appears;
+          animation-name: appears;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+
+@-webkit-keyframes appears {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appears {
+  0% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* landing pages fixes */
+@media (max-width: 767px) {
+  .categoryBanner,
+  #catBanner {
+    display: block;
+  }
+}

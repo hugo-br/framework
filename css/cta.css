@@ -1,0 +1,311 @@
+/*////////////////////////
+  - @banner-responsive : breakpoint for the landing pages
+  - @lp-responsive : breakpoint for the landing pages
+  - @align : text-alignment
+  - @font-color : for different text colors
+  - @font-family: add all font available
+  - @font-modifiers :  (include : font-color)
+  - @font-size : font-size(48px, 32px, 25px, 18px, 14px)
+  - @mixin font-responsive(5vw, 4vw, 3vw, 2vw, 1vw)
+  - @margins
+  - @margins-desktop : reponsive margins
+  - @margins-mobile
+  - @margins-all (margins, margins-desktop, font-modifiers)
+//////////////////////*/
+/* breakpoints for elements */
+/* alignment for elements */
+.cta {
+  background-color: #fff;
+  border: 1px solid transparent;
+  color: #000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "GothamMedium", "Arial", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  height: 31px;
+  letter-spacing: .15em;
+  line-height: 31px;
+  min-width: 160px;
+  position: relative;
+  padding: 0 15px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-rendering: optimizeSpeed;
+  -webkit-transition: color 0.5s, background-color 0.5s, border-color 0.5s;
+  -o-transition: color 0.5s, background-color 0.5s, border-color 0.5s;
+  transition: color 0.5s, background-color 0.5s, border-color 0.5s;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: -o-max-content;
+  width: -ms-max-content;
+  white-space: nowrap;
+  width: auto;
+  z-index: 4;
+  /* Responsive design between desktop and mobile */
+  /* Modifiers */
+}
+
+.cta:hover {
+  background-color: #8d8d8d;
+  color: #fff;
+  -webkit-transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  -o-transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+  transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+}
+
+@media (max-width: 1300px) and (min-width: 768px) {
+  .cta {
+    min-width: 12vw;
+    font-size: 1vw;
+    height: 2.2vw;
+    line-height: 2.2vw;
+  }
+}
+
+.cta--dark, .cta--black {
+  background-color: #000;
+  color: #fff;
+}
+
+.cta--dark:hover, .cta--black:hover {
+  background-color: #8d8d8d;
+}
+
+.cta--white {
+  background-color: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.cta--white:hover {
+  background-color: #8d8d8d;
+  color: #fff;
+  border-color: #fff;
+}
+
+.cta--light {
+  background-color: #fff;
+  color: #000;
+  border-color: #fff;
+}
+
+.cta--light:hover {
+  background-color: #fff;
+  color: #fff;
+  border-color: #fff;
+}
+
+.cta--red {
+  background-color: #b2171b;
+  color: #fff;
+}
+
+.cta--red:hover {
+  background-color: #df1d22;
+}
+
+.cta--gold {
+  background-color: #c6a361;
+  color: #000;
+  border-color: #c6a361;
+}
+
+.cta--gold:hover {
+  background-color: #f6d385;
+  color: #000;
+  border-color: #f6d385;
+}
+
+.cta--green {
+  background-color: #034243;
+  color: white;
+  border-color: #034243;
+}
+
+.cta--green:hover {
+  background-color: #105d5f;
+}
+
+.cta--pink {
+  background-color: #f976bc;
+  color: white;
+  border-color: #f976bc;
+}
+
+.cta--pink:hover {
+  background-color: #f85eb0;
+}
+
+.cta--peach {
+  background-color: #d08b7e;
+  color: white;
+  border-color: #d08b7e;
+}
+
+.cta--peach:hover {
+  background-color: #d79c91;
+  border-color: #d08b7e;
+}
+
+.cta--light-blue {
+  background-color: #aed6f0;
+  color: white;
+  border-color: #aed6f0;
+}
+
+.cta--light-blue:hover {
+  background-color: #98cbec;
+  border-color: #aed6f0;
+}
+
+.cta--underline {
+  background-color: transparent;
+  color: #000;
+  min-width: unset;
+  text-align: left;
+  text-decoration: underline;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.cta--underline:hover {
+  background-color: transparent;
+  color: #000;
+}
+
+.cta--underline-white {
+  background-color: transparent;
+  color: white;
+  min-width: unset;
+  text-align: left;
+  text-decoration: underline;
+}
+
+.cta--underline-white:hover {
+  background-color: transparent;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .cta--show-mobile, .cta--hide-desktop, .cta--mobile {
+    display: block;
+  }
+  .cta--show-desktop, .cta--hide-mobile, .cta--desktop {
+    display: none;
+  }
+  .cta--show-all {
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .cta--show-mobile, .cta--hide-desktop, .cta--mobile {
+    display: none;
+  }
+  .cta--show-desktop, .cta--hide-mobile, .cta--desktop {
+    display: block;
+  }
+}
+
+.cta--show-all {
+  display: block;
+}
+
+.cta--margin-0 {
+  margin-top: 0px;
+}
+
+.cta--margin-5 {
+  margin-top: 5px;
+}
+
+.cta--margin-10 {
+  margin-top: 10px;
+}
+
+.cta--margin-15 {
+  margin-top: 15px;
+}
+
+.cta--margin-20 {
+  margin-top: 20px;
+}
+
+.cta--margin-25 {
+  margin-top: 25px;
+}
+
+.cta--margin-30 {
+  margin-top: 30px;
+}
+
+.cta--margin-35 {
+  margin-top: 35px;
+}
+
+.cta--margin-40 {
+  margin-top: 40px;
+}
+
+.cta--margin-45 {
+  margin-top: 45px;
+}
+
+.cta--margin-50 {
+  margin-top: 50px;
+}
+
+.cta--margin-55 {
+  margin-top: 55px;
+}
+
+.cta--margin-60 {
+  margin-top: 60px;
+}
+
+.cta--margin-65 {
+  margin-top: 65px;
+}
+
+.cta--margin-70 {
+  margin-top: 70px;
+}
+
+.cta--margin-75 {
+  margin-top: 75px;
+}
+
+.cta--margin-80 {
+  margin-top: 80px;
+}
+
+.cta--margin-85 {
+  margin-top: 85px;
+}
+
+.cta--margin-90 {
+  margin-top: 90px;
+}
+
+.cta--margin-95 {
+  margin-top: 95px;
+}
+
+.cta--margin-100 {
+  margin-top: 100px;
+}
+
+.cta--align-left {
+  text-align: left;
+}
+
+.cta--align-right {
+  text-align: right;
+}
+
+.cta--align-center {
+  text-align: center;
+}

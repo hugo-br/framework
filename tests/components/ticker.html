@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Landing Page</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta content="True" name="HandheldFriendly">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=5">
+        <meta name="nosnippets">
+        <meta name="theme-color" content="#85031b">
+        <meta name="description" content="Landing Page">
+        <!-- preload assets-->
+        <link rel="preload" href="https://static.lechateau.com/css/lci/@1.0.5/lci.combined.min.css" as="style">
+        <link rel="preload" href="https://static.lechateau.com/css/lci/@1.0.5/lci-combined.min.js" as="script">
+        <link rel="preload" href="https://static.lechateau.com/css/lci/ticker/v1/lc-ticker.min.js?bust=290420" as="script">
+        
+        <link rel="stylesheet" type="text/css"
+          href="https://static.lechateau.com/static/css/combined.min.css?bust=6e5536c">
+        
+          <link rel="stylesheet" type="text/css"
+          href="https://static.lechateau.com/css/lci/@1.0.5/lci.combined.min.css">
+        
+          <!-- !!! DO NOT INCLUDE IN BCC !!!-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script src="https://static.lechateau.com/css/lci/@1.0.5/lci-combined.min.js" defer=""></script>
+        <!-- !!! DO NOT INCLUDE IN BCC !!!-->
+
+        <!-- Ticker -->
+        <script src="https://static.lechateau.com/css/lci/ticker/v1/lc-ticker.min.js?bust=290420"></script>
+
+        <style>
+          /* test purpose only */
+          .ticker__wrap, .ticker__inner {
+             background-color: black;
+          }
+          
+          @media only screen and (max-width: 766px) {
+            .ticker__inner * {
+              color: white;
+            }
+          }
+          /* end - test purpose only */
+
+
+          /* bug fix 
+          .ticker__slide__inner {
+            opacity: 0;
+          }
+          */
+
+          .ticker__inner * { font-size: 11px;}
+          .ticker__link {text-transform: none;}
+		  .ticker__code{padding: 0;}
+
+          /* Mobile fixes */
+          @media (max-width: 591px) {
+            .ticker__inner * { font-size: 10px;}
+          }
+
+        </style>
+
+      </head>
+
+  
+
+
+<body>
+
+
+<!-- TICKER -->
+<div class='ticker__wrap'>
+  <div id='lcTicker' class="ticker__inner">
+    <ul class="ticker__slide__wrap">
+        <li class="ticker__slide">
+        <div class="ticker__slide__inner">
+        <h3 class="ticker__title">5$ FLAT RATE SHIPPING ON ORDERS $100+</h3>
+        <a class="ticker__link" href="https://www.lechateau.com/style/html/terms/shipping/5dollarflatrate100_2017_en.html" target="_blank" onfocus='this.blur()' onclick="NewWindow(this.href,'mywin','320','193','yes','center');return false"> 		 
+             Details. 		  
+            </a>
+        </div>
+        </li>
+    </ul>
+  </div>
+</div>
+
+<br><br><br><br>
+
+<!-- TICKER -->
+<div class='ticker__wrap'>
+  <div id='lcTickerFR' class="ticker__inner">
+    <ul class="ticker__slide__wrap">
+        <li class="ticker__slide">
+        <div class="ticker__slide__inner">
+        <h3 class="ticker__title">Commandes de 100+: Livraison fixe de 5$.</h3>
+        <a class="ticker__link" href="https://www.lechateau.com/style/html/terms/shipping/5dollarflatrate100_2017_fr.html" target="_blank" onfocus='this.blur()' onclick="NewWindow(this.href,'mywin','320','193','yes','center');return false"> 		 
+             Détails. 		  
+            </a>
+        </div>
+        </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<script>
+ 
+ var win = null;
+
+		function NewWindow(mypage, myname, w, h, scroll, pos) {
+			w = w || 320;
+			h = h || 193;
+				
+			if (pos == "random") {
+				var LeftPosition = (screen.width) ? Math.floor(Math.random() * (screen.width - w)) : 100;
+				var TopPosition = (screen.height) ? Math.floor(Math.random() * ((screen.height - h) - 75)) : 100;
+			}
+			if (pos == "center") {
+				var LeftPosition = (screen.width) ? (screen.width - w) / 2 : 100;
+				 var TopPosition = (screen.height) ? (screen.height - h) / 2 : 100;
+			} else if ((pos != "center" && pos != "random") || pos == null) {
+				var LeftPosition = 0;
+				var TopPosition = 20
+			}
+			
+			var settings = 'width=' + w + ',height=' + h + ',top=' + TopPosition + ',left=' + LeftPosition + ',scrollbars=' + scroll
+				+
+				',location=no,directories=no,status=no,menubar=no,toolbar=no,resizable=no';
+			win = window.open(mypage, myname, settings);
+		}
+
+// old IE fix
+//var defaultTickerText = "5$ FLAT RATE SHIPPING ON ORDERS $100+ <a href='https://www.lechateau.com/style/html/terms/shipping/5dollarflatrate100_2017_en.html' target='_blank' onfocus='this.blur()' onclick=\"NewWindow(this.href,'mywin','320','193','yes','center');return false\">Details.</a>";
+//var defaultTickerTextFR = "Commandes de 100+: Livraison fixe de 5$.";
+
+
+var tickerData = [
+
+
+// slide start
+[
+   {
+      "type": "title",
+        "en": "5$ FLAT RATE SHIPPING ON ORDERS $100+.",
+        "fr": "Commandes de 100+: Livraison fixe de 5$.",
+        "us": "5$ FLAT RATE SHIPPING ON ORDERS $75+."
+    },
+	
+    {
+    "type": "cta",
+		"en": "Details",
+		"fr": "Détails",
+		"link" : {
+			"href": "https://www.lechateau.com/style/html/terms/shipping/5dollarflatrate100_2017_en.html",
+			"en": "Read the Shipping Terms",
+			"fr": "Lire les conditions", 
+			"target": "_blank",
+			"details": true
+		}
+    },
+],
+// slide end
+
+
+
+
+// slide start
+[
+    {
+     "type": "code",
+        "en": "💐 $25 OFF the Mother’s Day Gift Guide, Use Code: <input readonly type='text' value='ALL4MOM' class='ticker__code' maxlength='11' size='12' onclick='copyToClip(this)' title='Click to Copy Promo Code'> 💐 <a class='ticker__link' href='https://www.lechateau.com/style/jump/Mother%27s+Day/category/cat47840702'>SHOP NOW</a>",
+        "fr": "💐 25 $ de rabais sur le guide cadeaux, code: <input readonly type='text' value='POURMAMAN' class='ticker__code' maxlength='16' size='16' onclick='copyToClip(this)' title='Cliquez pour copier le code'> 💐 <a class='ticker__link' href='https://www.lechateau.com/style/jump/Mother%27s+Day/category/cat47840702'>MAGASINEZ</a>",
+    }
+],
+// slide end
+
+
+
+];
+</script>
+
+
+  
+
+  
+<!-- Ticker Code -->
+<script>
+  $(window).load(function(){
+    try {
+      lcTicker('#lcTicker', 'en');   
+      lcTicker('#lcTickerFR', 'fr');
+    } catch(err) {
+      console.log(err);
+    }
+    $(".ticker__slide__inner").animate({opacity: 1}, 300);
+  });
+  </script>
+
+
+</body>
+</html>
+
+
+
+

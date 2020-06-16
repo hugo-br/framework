@@ -1,0 +1,190 @@
+@import "./mixins";
+
+//cta buttons
+.cta {
+    background-color: #fff;
+    border: 1px solid transparent;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "GothamMedium", "Arial", sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    height: 31px;
+    letter-spacing: .15em;
+    line-height: 31px;
+    min-width: 160px;
+    position: relative;
+    padding: 0 15px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-rendering: optimizeSpeed;
+    -webkit-transition: color 0.5s, background-color 0.5s, border-color 0.5s;
+    -moz-transition: color 0.5s, background-color 0.5s, border-color 0.5s;
+    -ms-transition: color 0.5s, background-color 0.5s, border-color 0.5s;
+    transition: color 0.5s, background-color 0.5s, border-color 0.5s;
+    width: -moz-max-content;
+    width: -webkit-max-content;
+    width: -o-max-content;
+    width: -ms-max-content;
+    white-space: nowrap;
+    width: auto;
+    z-index: 4;
+  
+    &:hover {
+      background-color: #8d8d8d;
+      color: #fff;
+      -webkit-transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+      -moz-transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+      -ms-transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+      transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+      
+    }
+  
+    /* Responsive design between desktop and mobile */
+    @media (max-width: $max-desktop) and (min-width: $tablet) {
+      min-width: 12vw;
+      font-size: 1vw;
+      height: 2.2vw;
+      line-height: 2.2vw;
+    }
+  
+    /* Modifiers */
+  
+    // dark
+    &--dark,
+    &--black {
+      background-color: #000;
+      color: #fff;
+  
+      &:hover {
+        background-color: #8d8d8d;
+      }
+    }
+  
+
+    &--white {
+      background-color: #fff;
+      color: #000;
+      border-color: #fff;
+  
+      &:hover {
+        background-color: #8d8d8d;
+        color: #fff;
+        border-color: #fff;
+      }
+    }
+
+
+    // light
+    &--light {
+      background-color: #fff;
+      color: #000;
+      border-color: #fff;
+  
+      &:hover {
+        background-color: #fff;
+        color: #fff;
+        border-color: #fff;
+      }
+    }
+  
+    &--red {
+      background-color: #b2171b;
+      color: #fff;
+  
+      &:hover {
+        background-color: lighten(#b2171b, 10%);
+      }
+    }
+  
+    &--gold {
+      background-color: #c6a361;
+      color: #000;
+      border-color: #c6a361;
+  
+      &:hover {
+        background-color: #f6d385;
+        color: #000;
+        border-color: #f6d385;
+      }
+    }
+  
+    &--green {
+      background-color: #034243;
+      color: white;
+      border-color: #034243;
+  
+      &:hover {
+        background-color: #105d5f;
+      }
+    }
+  
+    &--pink {
+      background-color: #f976bc;
+      color: white;
+      border-color: #f976bc;
+  
+      &:hover {
+        background-color:darken(#f976bc, 5%);
+      }
+    }
+
+    &--peach {
+      background-color: #d08b7e;
+      color: white;
+      border-color: #d08b7e;
+  
+      &:hover {
+        background-color: lighten(#d08b7e, 5%);
+        border-color: #d08b7e;
+      }   
+    }
+
+    &--light-blue {
+      background-color: #aed6f0;
+      color: white;
+      border-color:#aed6f0;
+  
+      &:hover {
+        background-color: darken(#aed6f0, 5%);
+        border-color: #aed6f0;
+      }        
+    }
+  
+  
+    // underline
+    &--underline {
+      background-color: transparent;
+      color: #000;
+      min-width: unset;
+      text-align: left;
+      text-decoration: underline;
+      padding-left: 0;
+      padding-right: 0;
+  
+      &:hover {
+        background-color: transparent;
+        color: #000;
+      }
+  
+      &-white {
+        background-color: transparent;
+        color: white;
+        min-width: unset;
+        text-align: left;
+        text-decoration: underline;
+  
+        &:hover {
+          background-color: transparent;
+          color: white;
+        }
+      }
+    }
+  
+    @include lp-responsive;
+    @include margins;
+    @include align;
+  }

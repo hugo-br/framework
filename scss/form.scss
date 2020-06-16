@@ -1,0 +1,292 @@
+/*///////////////////
+  Table of content
+  0. Variables 
+
+///////////////////*/
+
+/*********
+Variables
+*********/
+$input: (color: #666666,
+  focus: rgb(10, 10, 10),
+  success: rgb(4, 146, 4),
+  error: rgb(228, 3, 3),
+  focusBlue : #a5b9d0);
+
+$tablet : 768px;
+
+.formulaire {
+  display: block;
+  position: relative;
+  max-width: 1300px;
+  margin: auto;
+
+  >.formulaire__row:nth-child(1) {
+    margin-top: 30px;
+  }
+}
+
+/* input row  */
+.formulaire__row {
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+  width: 98%;
+  margin-top: 25px;
+
+  /* mobile */
+  @media (max-width: $tablet) {
+    width: 95%;
+    margin: auto;
+    margin-top: 45px;
+  }
+
+  /* half row */
+  &--half {
+    width: 48.3%;
+    display: inline-block;
+    margin-right: 1%;
+    box-sizing: border-box;
+
+    /* mobile */
+    @media (max-width: $tablet) {
+      display: block;
+      width: 95%;
+      margin: 45px auto 0;
+    }
+  }
+}
+
+/* label */
+.formulaire__label {
+  color: map-get($input, color);
+  font-size: 15px;
+  font-weight: 300;
+  cursor: pointer;
+  font-family: "MuseoSans-300";
+
+  &--anim {
+    left: 10px;
+    position: absolute;
+    pointer-events: none;
+    top: 12px;
+    transition: 0.2s ease all;
+  }
+}
+
+/////////////////////////
+// checkbox and radio
+/////////////////////////
+
+.formulaire__checkbox,
+.formulaire__radio {
+  display: none !important;
+}
+
+.formulaire__checkbox + .formulaire__label, 
+.formulaire__radio + .formulaire__label {
+    cursor: pointer;
+    font-family: "MuseoSans-300";
+    font-size: 15px;
+    text-align: center;
+    color: map-get($input, color);
+    box-shadow: 0 0 0 2px white inset;
+    transition: color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+// checker 
+.formulaire__checkbox:checked+.formulaire__label:before,
+.formulaire__radio:checked+.formulaire__label:before{
+    content: "\f00c";
+    font-family: 'fontawesome';
+    font-size: 17px;
+    text-align: center;
+    color: map-get($input, color);
+    box-shadow: 0 0 0 2px white inset;
+    transition: color 0.2s,box-shadow 0.2s, background 0.2s;
+}
+
+
+
+/// Place to display error or warning messages
+.formulaire__message {
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  text-align: right;
+}
+
+// select
+select.formulaire__select,
+.formulaire__select:not(.ui-datepicker-month):not(.ui-datepicker-year)  {
+  border: 1px solid map-get($input, color);
+  height: 30px;
+  line-height: 30px;
+  border-radius: 3px;
+  color: map-get($input, color);
+  -webkit-appearance: menulist-button;
+  font-size: 15px;
+  font-family: "MuseoSans-300", sans-serif;
+
+  >option {
+    color: map-get($input, color);
+  }
+
+  &:after {
+    content: '+';
+  }
+}
+
+/*****************
+  Text input
+****************/
+.formulaire__input {
+  box-sizing: border-box;
+  color: map-get($input, focus);
+  font-size: 15px;
+  font-family: "GothamBook", "Arial Black", sans-serif;
+  padding: 10px 0px 10px 10px;
+  display: block;
+  outline: none;
+  border: none;
+  width: 100%;
+  border: 1px solid lighten(map-get($input, color), 25%);
+  border-radius: 3px;
+
+  &:focus {
+    border-color: map-get($input, focus) !important;
+    outline: 0;
+    box-shadow: 0 0 6px 1px rgba(42, 47, 51, 0.25);
+  }
+}
+
+/* focus state */
+.formulaire__input:focus~.formulaire__label,
+.formulaire__input.used~.formulaire__label {
+  top: -20px;
+  font-size: 13px;
+  color: #0a0a0a;
+}
+
+/* error and success state */
+.formulaire__input.good~.formulaire__label {
+  color: map-get($input, success);
+  transition: color 0.5s ease 0.5s;
+}
+
+.formulaire__input.good~.formulaire__bar:before,
+.formulaire__input.good~.formulaire__bar:after {
+  width: 50%;
+  background: map-get($input, success);
+  animation-name: barSuccess;
+  animation-duration: 1s;
+}
+
+.formulaire__input.error~.formulaire__label {
+  color: map-get($input, error);
+  transition: color 0.5s ease 0.5s;
+}
+
+.formulaire__input.error~.formulaire__bar:before,
+.formulaire__input.error~.formulaire__bar:after {
+  width: 50%;
+  background: map-get($input, error);
+  animation-name: barError;
+  animation-duration: 1s;
+}
+
+.formulaire__input.error.missing~.formulaire__bar:before,
+.formulaire__input.error.missing~.formulaire__bar:after {
+  animation-name: barErrorMissing;
+}
+
+.formulaire__input.good,
+.formulaire__input.error {
+  color: map-get($input, focus);
+}
+
+/*****************
+  Bar animation
+****************/
+.formulaire__bar {
+  position: relative;
+  display: block;
+  width: 100%;
+
+  &:before,
+  &:after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: -1px;
+    position: absolute;
+    background: map-get($input, focus);
+    transition: 0.2s ease all;
+  }
+
+  &:before {
+    left: 50%;
+  }
+
+  &:after {
+    right: 50%;
+  }
+}
+
+/******************
+  Animations
+  ******************/
+
+/* animations */
+@keyframes barSuccess {
+  0% {
+    width: 50%;
+    background: map-get($input, focus);
+  }
+
+  50% {
+    width: 0%;
+    background: map-get($input, focus);
+  }
+
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes barError {
+  0% {
+    width: 50%;
+    background: map-get($input, error);
+  }
+
+  50% {
+    width: 0%;
+    background: map-get($input, error);
+  }
+
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes barErrorMissing {
+  0% {
+    width: 0%;
+    background: map-get($input, error);
+  }
+
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes entrySuccess {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,181 @@
+/* CSS News Ticker */
+.ticker__wrap {
+  display: block;
+  text-align: center;
+  background: transparent;
+  color: white;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  width:100%;
+}
+
+@media only screen and (max-width: 766px) and (min-width: 630px) {
+  .ticker__wrap {
+    padding-top: 10px;
+  }
+}
+
+
+.ticker__inner {
+  height: 20px;
+  overflow: hidden;
+  background: transparent;
+  text-align: left;
+  padding: 0;
+  width:100%;
+}
+
+.ticker__inner * {
+   text-transform: uppercase;
+   color: white;
+   font-size: 13px;  
+   letter-spacing: 2px;
+   font-weight: bold;
+   font-family: GothamMedium;
+}
+
+/* tablet font-decrease */
+@media only screen and (max-width: 766px) {
+  .ticker__inner * {
+    font-size: 12px; 
+    letter-spacing: 1px;
+    color: black;
+  }
+}
+
+/* mobile font */
+@media only screen and (max-width: 591px) {
+  .ticker__inner * {
+    font-size: 10px; 
+    letter-spacing: 0px;
+  }
+}
+
+/* container */
+.ticker__inner ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width:100%;
+  text-align: center;
+   
+}
+
+/* slide */
+.ticker__slide {
+  height: 20px;
+  white-space: nowrap;
+}
+
+.ticker__slide__inner {
+   display: block;
+   width: 80%;
+   margin: auto;
+   position: relative;
+   line-height: 20px;
+   text-align: center;
+}
+
+/* mobile */
+@media (max-width:768px) {
+  .ticker__slide__inner {
+      width: 95%;
+  }
+}
+
+.ticker__slide__inner * {
+  display: inline-block;
+  text-align: center;
+}
+
+
+@media (min-width:768px) {
+  .ticker__slide__inner .LP-DEVICE {
+      display: none !important;
+  }
+
+  .ticker__slide__inner .LP-DESKTOP {
+      display: inline-block !important;
+  }
+}
+
+  @media (max-width:768px) {
+    .ticker__slide__inner .LP-DEVICE {
+          display: inline-block !important;
+      }
+
+      .ticker__slide__inner .LP-DESKTOP {
+          display: none !important;
+      }
+  }
+
+
+.ticker__thumbnail {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.ticker__title {
+  margin: 0;
+  color: inherit;
+  font-size: 1em;
+  display: inline-block;
+}
+
+.ticker__link {
+  text-decoration: underline;
+  cursor: pointer;
+  color: inherit;
+}
+
+.ticker__link:hover{
+  color: inherit;
+}
+
+.ticker__meta * {
+  color: inherit;
+  font-size: 1em;
+  letter-spacing: 1px;
+  font-weight: bold;
+  margin-left: 3px;
+}
+
+.ticker__link,
+.ticker__thumbnail,
+.ticker__text,
+.ticker__title {
+  margin: 0 3px;
+}
+
+.ticker__code {
+  border: none;
+  width: auto;
+  display: inline-block;
+  color: inherit;
+  background-color: transparent;
+  width: auto;
+  min-width: 20px;
+  padding: 0 3px;
+  white-space: normal;
+  outline: none;
+  cursor: pointer;
+}
+
+.ticker__code:focus {
+  outline: none;
+  border: 0px solid #bfbfbf !important;
+}
+
+/*
+.ticker__code[title]:hover:after {
+  content: attr(title);
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background-color: black;
+  color: white;
+}
+*/

@@ -1,0 +1,114 @@
+/***********************************************
+		SLIDER
+**********************************************/
+.row--carousel {
+  max-width: 1300px;
+  width: 100%;
+  margin: auto;
+  position: relative;
+  -webkit-transition: opacity 0.4s ease;
+  -o-transition: opacity 0.4s ease;
+  transition: opacity 0.4s ease;
+}
+
+.row--carousel-hero,
+.row--carousel.hero {
+  max-width: 2000px;
+}
+
+.row--carousel.reveal {
+  opacity: 1;
+}
+
+.carousel {
+  width: 100%;
+}
+
+.carousel__img {
+  max-width: none;
+  width: 100%;
+}
+
+/* arrows */
+.carousel__arrows,
+.carousel__arrows--prev,
+.carousel__arrows--next {
+  background: none;
+  background-repeat: no-repeat;
+  color: #b6b0b0;
+  height: 30px;
+  line-height: 44px;
+  padding: 0 15px;
+  display: inline-block;
+  min-width: 30px;
+  text-transform: uppercase;
+  font-size: 30px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  background-size: cover;
+}
+
+/* background-image height and width */
+.carousel__arrows {
+  height: 54px;
+  width: 40px;
+  top: calc(50% - 27px);
+}
+
+.carousel__arrows--prev {
+  background-image: url("https://lechateau.scene7.com/is/image/LeChateau/arrow-181116-left?$png-full$&qlt=94&ver=1.0");
+  left: 0;
+}
+
+.carousel__arrows--next {
+  background-image: url("https://lechateau.scene7.com/is/image/LeChateau/arrow-181116-right?$png-full$&qlt=94&ver=1.0");
+  right: 0;
+}
+
+/* dots */
+.carousel__dots {
+  width: 100%;
+  text-align: center;
+  margin-top: -10px;
+}
+
+.carousel__dots li {
+  display: inline-block;
+}
+
+.carousel__dots button {
+  background: none;
+  color: #babbbd;
+  height: 9px;
+  line-height: 9px;
+  padding: 0px;
+  display: inline-block;
+  float: left;
+  width: 9px;
+  text-transform: uppercase;
+  font-size: 0px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 50%;
+  min-width: 9px;
+  background-color: #babbbd;
+  margin-right: 9px;
+}
+
+/* active */
+.carousel__dots .slick-active button {
+  background-color: #76787c;
+  color: #76787c;
+}
+
+/* fix */
+.carousel__arrows a.button:after,
+.carousel__arrows button:after,
+.carousel__dots a.button:after,
+.carousel__dots button:after {
+  border: none;
+}

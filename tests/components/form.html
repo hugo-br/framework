@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Landing Page</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta content="True" name="HandheldFriendly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=5" />
+  <meta name="nosnippets" />
+  <meta name="theme-color" content="#85031b">
+  <meta name="description" content="Landing Page" />
+
+    <!-- !!! DO NOT INCLUDE IN BCC !!! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <!-- !!! DO NOT INCLUDE IN BCC !!! -->
+
+
+
+  <link rel="stylesheet" type="text/css" href="https://static.lechateau.com/static/css/combined.min.css?bust=4c6557c">
+  
+  <!--
+  <link rel="stylesheet" type="text/css"
+    href="https://static.lechateau.com/html/landing/templates/new/MyFontsWebfontsKit.min.css" />
+  -->
+  
+  <link rel="stylesheet" type="text/css" href="../../css/fonts.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/banner.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/landing.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/common.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/form.css" />
+
+</head>
+
+
+<body>
+
+
+
+
+    <main class="page page--smaller">
+
+
+      <div class="row">
+        <div style="height: 20vh; width:100%; background-color: red; font-size: 4vw; color: white;">
+          FORM COMPONENTS
+        </div>
+      </div>
+        
+        <form class="formulaire">
+          <h1 class="text text--size-24 text--GothamMedium  text--align-center">Text Inputs</h1>
+          <br>
+
+          <!-- text input -->
+          <div class="formulaire__row">
+            <input class="formulaire__input js-input" type="text" data-input="email" id="">
+            <label class="formulaire__label formulaire__label--anim">Enter your email</label>
+            <span class="formulaire__message">&nbsp;</span>
+          </div>
+
+          <!-- half row -->
+          <div class="formulaire__row formulaire__row--half">
+            <input class="formulaire__input js-input" type="text" data-input="firstName" id="">
+            <label class="formulaire__label formulaire__label--anim">Enter your first name</label>
+            <span class="formulaire__message">&nbsp;</span>
+          </div>
+
+          <div class="formulaire__row formulaire__row--half">
+            <input class="formulaire__input js-input" type="text" data-input="lastName" id="">
+            <label class="formulaire__label formulaire__label--anim">Enter your last name</label>
+            <span class="formulaire__message">&nbsp;</span>
+          </div>
+
+
+     <!-- Radio -->
+      <div class="row row--margin-25"> 
+        <h1 class="text text--size-24 text--GothamMedium">Radio Button</h1>
+        <br>
+
+        <input class="formulaire__radio" type="radio" name="preference" id="radio-women">
+        <label class="formulaire__label" for="radio-women">Women</label>
+        &nbsp;&nbsp;&nbsp;
+        <input class="formulaire__radio" type="radio" name="preference" id="radio-men">
+        <label class="formulaire__label" for="radio-men">Men</label>
+        &nbsp;&nbsp;&nbsp;
+        <input class="formulaire__radio" type="radio" name="preference" id="radio-both" checked>
+        <label class="formulaire__label" for="radio-both">Both</label>
+      </div>
+
+
+          <!-- checkboxes -->
+          <div class="row">
+            <h1 class="text text--size-24 text--GothamMedium">Checkboxes</h1>
+            <br>
+
+            <input class="formulaire__checkbox " type="checkbox" name="women" id="checkbox-women">
+            <label class="formulaire__label" for="checkbox-women">Women</label>
+            &nbsp;&nbsp;&nbsp;
+            <input class="formulaire__checkbox" type="checkbox" name="mens" id="checkbox-men">
+            <label class="formulaire__label" for="checkbox-men">Men</label>
+            &nbsp;&nbsp;&nbsp;
+            <input class="formulaire__checkbox" type="checkbox" name="both" id="checkbox-both">
+            <label class="formulaire__label" for="checkbox-both">Both</label>
+          </div>
+
+
+          <div class="row">
+            <h1 class="text text--size-24 text--GothamMedium">Dropdown</h1>
+            <br>
+            
+            <select class="formulaire__select">
+              <option value="women">Women</option>
+              <option value="men">Men</option>
+              <option value="both">Both</option>
+            </select> 
+
+          </div>
+
+
+          <div class="row">
+            <button class="cta cta--black js-sumit">Submit</button>
+          </div>
+            
+        </form>
+
+        <!-- details -->
+        <div class="row__details">
+          *15% offer valid for new subscriber, online only. 
+        </div>
+
+
+    </main>
+
+
+
+  <script src="../../js/combined/lci-combined.min.js" defer></script>
+  <script src="../../js/form.js" async></script>
+
+
+
+
+
+
+</body>
+
+</html>

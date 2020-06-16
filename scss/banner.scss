@@ -1,0 +1,661 @@
+/*/////////////////////////////////
+
+  Table of content
+  0. Variables 
+  1. Import
+  2. Banners
+    - 
+    - SEO banner
+    - Pricepoint banners
+      -  OUTLET Category Banners
+      -  SALE Category Banners
+      -  CLEARANCE Category Banners
+
+/////////////////////////////////*/
+
+// 0. Variables
+/* Breakpoints */
+$max-banner: 1025px;
+$tablet: 768px;
+$mobile: 591px;
+$bckgColor: #eaeaea;
+$saleBckg: #35393c;
+$outletBckg : #ab5866;
+$clearanceBckg: #ff3741;
+
+// 1. Fonts
+// @import "./fonts";
+@import "./mixins";
+
+
+// 1. Banners
+
+// fix bcc bug 
+#catBanner>p {
+  line-height: 0;
+}
+
+.banner,
+.pricepoint {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  max-width: $max-banner;
+  z-index: 0;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+
+  @include banner-responsive;
+
+  /* fix for cta on banners */
+  .cta {
+    @media (max-width: $max-banner) and (min-width: $mobile) {
+      min-width: 12vw;
+      font-size: 1vw;
+      height: 2.2vw;
+      line-height: 2.2vw;
+    }
+  }
+}
+
+.banner__img {
+  max-width: 100%;
+  height: auto;
+
+  @include banner-responsive;
+}
+
+.banner__holder {
+  left: 0;
+  height: 100%;
+  position: absolute;
+  vertical-align: middle;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  @include banner-responsive;
+
+  &--align-center {
+    * {
+      text-align: center;
+    }
+  }
+
+  &--align-left {
+    * {
+      text-align: left;
+    }
+  }
+
+  &--align-right {
+    * {
+      text-align: right;
+    }
+  }
+
+}
+
+// text over the banner 
+.banner__text {
+  color: black;
+  position: relative;
+  float: left;
+  left: 50%;
+  top: 50%;
+  text-rendering: optimizeSpeed;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  &--left {
+    left: 0;
+    padding-left: 5%;
+    text-align: left;
+    transform: translate(0%, -50%);
+    width: 47%;
+  }
+
+  &--right {
+    float: right;
+    left: 0%;
+    padding-right: 5%;
+    text-align: left;
+    transform: translate(0%, -50%);
+    width: 47%;
+  }
+
+  &--align-center {
+    * {
+      text-align: center;
+    }
+  }
+
+  &--align-left {
+    * {
+      text-align: left;
+    }
+  }
+
+  &--align-right {
+    * {
+      text-align: right;
+    }
+  }
+
+  @include banner-responsive;
+}
+
+/* Title for banner */
+.banner__title {
+  color: black;
+  font-family: "DidotRoman", sans-serif;
+  font-size: 35px;
+  line-height: 42px;
+  letter-spacing: 0.15em;
+  margin: 0;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  text-align: inherit;
+  text-transform: uppercase;
+  text-rendering: optimizeSpeed;
+
+  // < 1025px
+  @media (max-width: $max-banner) {
+    font-size: 3vw;
+    line-height: normal;
+  }
+
+  /* Modifiers */
+  @include align;
+  @include banner-responsive;
+}
+
+/* Blur for banner */
+.banner__blur {
+  color: black;
+  font-family: "GothamBook", "MuseoSans-300";
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  line-height: 21px;
+  padding-top: 0;
+  text-align: inherit;
+  text-rendering: optimizeSpeed;
+
+
+  // < 1025px
+  @media (max-width: $max-banner) {
+    padding-top: calc((35 / 768) * 100%);
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 1.6vw;
+    line-height: initial;
+  }
+
+  &--white {
+    color: white;
+  }
+
+  &--black {
+    color: black;
+  }
+
+  @include banner-responsive;
+}
+
+/* SEO banner */
+.banner__seo,
+.banner__cat {
+  color: black;
+  display: block;
+  font-family: "GothamLight";
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  max-width: $max-banner;
+  padding: 5px 0;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeSpeed;
+
+
+  /* mobile */
+  @media (max-width: $mobile) {
+    background-color: $bckgColor;
+    font-family: "GothamLight";
+    font-size: 15px;
+    line-height: 15px;
+    padding: 10px 0;
+  }
+
+  @include banner-responsive;
+
+  &--flashsale {
+    background-color: #dd1324;
+  }
+}
+
+.banner__seo__title,
+.banner__cat__title {
+  font-family: "GothamLight", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-rendering: optimizeSpeed;
+
+  /* mobile */
+  @media (max-width: $mobile) {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  @include banner-responsive;
+  // @include font-modifiers;
+
+  &--flashsale {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'GothamBlack', 'ArialBlack';
+    letter-spacing: 11px;
+    color: white;
+    padding: 5px 0;
+   /* animation: flashColor  1000ms 2 cubic-bezier(0.13, -0.96, 0.61, 1) ;
+    -webkit-animation: flashColor  1000ms 2 cubic-bezier(0.13, -0.96, 0.61, 1);*/
+  }
+
+}
+
+/* Pricepoint banners */
+.pricepoint {
+  background-repeat: no-repeat;
+  background-position: top;
+  background-position-x: 50% !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px 0;
+
+  * {
+    color: black;
+    text-align: center;
+    text-rendering: optimizeSpeed;
+  }
+
+  &--white {
+    * {
+      color: white;
+    }
+  }
+
+  &--black {
+    * {
+      color: black;
+    }
+  }
+
+  //////////////////////////////
+  // OUTLET Category Banners
+  /////////////////////////////
+  &--outlet {
+
+    * {
+      font-family: 'GothamBold', 'MuseoSans-500', sans-serif;
+      color: white;
+    }
+
+    background-color: $outletBckg;
+
+    .pricepoint__catName {
+      font-size: 25px;
+      text-transform: uppercase;
+
+      @media (max-width: $mobile) {
+        font-size: 30px;
+        font-size: 6vw;
+      }
+    }
+
+    .pricepoint__title {
+      @media (max-width: $mobile) {
+        font-size: 24px;
+        font-size: 4.5vw;
+      }
+    }
+
+    .pricepoint__number {
+      font-size: 78px;
+      letter-spacing: 2px;
+      margin-left: 4px;
+
+      @media (max-width: $mobile) {
+        font-size: 80px;
+        font-size: 18vw;
+      }
+    }
+
+    .pricepoint__subNumber,
+    .pricepoint__symbol {
+      font-size: 44px;
+
+      @media (max-width: $mobile) {
+        font-size: 24px;
+        font-size: 6.5vw;
+      }
+    }
+
+    .pricepoint__text {
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+
+    .pricepoint__detail * {
+      font-family: 'MuseoSans-300', sans-serif;
+      font-weight: normal;
+    }
+  }
+
+  //////////////////////
+  // SALE Category Banners
+  //////////////////////
+  &--sale {
+
+    background-color: $saleBckg;
+
+    * {
+      font-family: 'GothamLight', 'MuseoSans-300', sans-serif;
+      color: white;
+    }
+
+    // fonts
+    .pricepoint__number,
+    .pricepoint__subNumber,
+    .pricepoint__symbol,
+    .pricepoint__text {
+      font-family: 'GothamLight';
+    }
+
+    .pricepoint__catName {
+      font-family: 'GothamMedium';
+      font-size: 35px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin: 5px auto 14px;
+      margin-top: 20px;
+
+      @media (max-width: $mobile) {
+        font-size: 32px;
+        font-size: 8vw;
+      }
+    }
+
+    .pricepoint__number {
+      font-size: 100px;
+      letter-spacing: -2px;
+
+      @media (max-width: $mobile) {
+        font-size: 80px;
+        font-size: 18vw;
+        letter-spacing: 0px;
+      }
+    }
+
+    .pricepoint__subNumber,
+    .pricepoint__symbol {
+      font-size: 45px;
+      letter-spacing: 1px;
+
+      @media (max-width: $mobile) {
+        font-size: 24px;
+        font-size: 6vw;
+      }
+    }
+
+    .pricepoint__text {
+      font-size: 18px;
+
+      @media (max-width: $mobile) {
+        font-size: 24px;
+        font-size: 5vw;
+      }
+    }
+
+    .pricepoint__detail * {
+      font-family: 'MuseoSans-300', sans-serif;
+      font-weight: normal;
+    }
+  }
+
+
+  /////////////////////////////
+  // CLEARANCE Category Banners
+  /////////////////////////////
+
+  &--clearance {
+
+    background-color: $clearanceBckg;
+
+    .pricepoint__row {
+      margin: 0px auto 10px;
+    }
+
+    * {
+      font-family: 'GothamBold', 'MuseoSans-500', sans-serif;
+      text-transform: uppercase;
+      color: white;
+    }
+
+    .pricepoint__title {
+      font-size: 48px;
+      letter-spacing: 2px;
+      padding-top: 10px;
+
+      @media (max-width: $mobile) {
+        font-size: 32px;
+        font-size: 7vw;
+        padding-top: 10px;
+      }
+    }
+
+    .pricepoint__catName {
+      font-size: 26px;
+      margin: 10px auto 10px;
+
+      @media (max-width: $mobile) {
+        font-size: 24px;
+        font-size: 4vw;
+      }
+    }
+
+    .pricepoint__number {
+      font-size: 58px;
+
+      @media (max-width: $mobile) {
+        font-size: 48px;
+        font-size: 12vw;
+        letter-spacing: 0px;
+      }
+    }
+
+    .pricepoint__subNumber,
+    .pricepoint__symbol {
+      font-size: 34px;
+
+      @media (max-width: $mobile) {
+        font-size: 24px;
+        font-size: 6vw;
+      }
+    }
+
+    .pricepoint__text {
+      font-size: 15px;
+      text-transform: lowercase;
+
+      @media (max-width: $mobile) {
+        font-size: 16px;
+        font-size: 3vw;
+      }
+    }
+
+    .pricepoint__detail {
+      padding-bottom: 10px;
+
+      @media (max-width: $mobile) {
+        font-size: 2.5vw;
+      }
+    }
+
+
+    .pricepoint__detail * {
+      font-family: 'MuseoSans-300', sans-serif;
+      font-weight: normal;
+      text-transform: none;
+
+      @media (max-width: $mobile) {
+        font-size: 11px;
+      }
+    }
+  }
+
+}
+
+// @end pricepoint
+
+/* category name */
+/* pricepoint titles */
+.pricepoint__title,
+.pricepoint__catName {
+  display: block;
+  font-size: 25px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+
+  @include banner-responsive;
+  @include align;
+}
+
+/* rows and columns */
+.pricepoint__row {
+  clear: both;
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 20px auto 20px;
+  position: relative;
+}
+
+.pricepoint__col {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// details
+.pricepoint__detail {
+  clear: both;
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 5px auto;
+  text-align: center;
+  text-transform: none;
+  width: 100%;
+  font-family: 'MuseoSans-300', sans-serif;
+  transition: all 0.5s ease;
+
+  // add underline if there a link
+  span,
+  a {
+    font-weight: normal;
+    text-decoration: underline;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    font-size: 11px;
+  }
+
+}
+
+// number
+.pricepoint__number {
+  font-size: 78px;
+  font-family: 'GothamBold';
+  letter-spacing: 2px;
+  margin-left: 4px;
+}
+
+// cents
+.pricepoint__subNumber {
+  font-family: 'GothamBold';
+  font-size: 44px;
+}
+
+// symbol : $/%
+.pricepoint__symbol {
+  font-family: 'GothamBold';
+  font-size: 44px;
+}
+
+/// text
+.pricepoint__text {
+  font-family: 'GothamBold';
+  font-size: 30px;
+}
+
+// fix jumping text
+.pricepoint__number,
+.pricepoint__subNumber,
+.pricepoint__symbol,
+.pricepoint__text,
+.pricepoint__col {
+  transition: all 0.5s ease;
+
+  // force auto-height and line-height
+  &--auto {
+    height: auto;
+    line-height: normal;
+  }
+}
+
+
+/////////////////
+// Animations 
+////////////////
+
+@keyframes flashColor
+    {
+      0%   {color: white;}
+      25% {color: black;}
+      50% {color: white;}
+      75%   {color: black;}
+      100%   {color: white;}
+    }
+    
+@-webkit-keyframes flashColor
+    {
+      0%   {color: white;}
+      25% {color: black;}
+      50% {color: white;}
+      75%   {color: black;}
+      100%   {color: white;}
+    }

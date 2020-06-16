@@ -1,0 +1,875 @@
+/*/////////////////////////////////
+
+  Table of content
+  0. Variables 
+  1. Import
+  2. Banners
+    - 
+    - SEO banner
+    - Pricepoint banners
+      -  OUTLET Category Banners
+      -  SALE Category Banners
+      -  CLEARANCE Category Banners
+
+/////////////////////////////////*/
+/* Breakpoints */
+/*////////////////////////
+  - @banner-responsive : breakpoint for the landing pages
+  - @lp-responsive : breakpoint for the landing pages
+  - @align : text-alignment
+  - @font-color : for different text colors
+  - @font-family: add all font available
+  - @font-modifiers :  (include : font-color)
+  - @font-size : font-size(48px, 32px, 25px, 18px, 14px)
+  - @mixin font-responsive(5vw, 4vw, 3vw, 2vw, 1vw)
+  - @margins
+  - @margins-desktop : reponsive margins
+  - @margins-mobile
+  - @margins-all (margins, margins-desktop, font-modifiers)
+//////////////////////*/
+/* breakpoints for elements */
+/* alignment for elements */
+#catBanner > p {
+  line-height: 0;
+}
+
+.banner,
+.pricepoint {
+  display: block;
+  height: auto;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  max-width: 1025px;
+  z-index: 0;
+  /* fix for cta on banners */
+}
+
+.banner *,
+.pricepoint * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.banner img,
+.pricepoint img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 591px) {
+  .banner--mobile,
+  .pricepoint--mobile {
+    display: block;
+  }
+  .banner--desktop,
+  .pricepoint--desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 591px) {
+  .banner--mobile,
+  .pricepoint--mobile {
+    display: none;
+  }
+  .banner--desktop,
+  .pricepoint--desktop {
+    display: block;
+  }
+}
+
+@media (max-width: 1025px) and (min-width: 591px) {
+  .banner .cta,
+  .pricepoint .cta {
+    min-width: 12vw;
+    font-size: 1vw;
+    height: 2.2vw;
+    line-height: 2.2vw;
+  }
+}
+
+.banner__img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 591px) {
+  .banner__img--mobile {
+    display: block;
+  }
+  .banner__img--desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 591px) {
+  .banner__img--mobile {
+    display: none;
+  }
+  .banner__img--desktop {
+    display: block;
+  }
+}
+
+.banner__holder {
+  left: 0;
+  height: 100%;
+  position: absolute;
+  vertical-align: middle;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+@media (max-width: 591px) {
+  .banner__holder--mobile {
+    display: block;
+  }
+  .banner__holder--desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 591px) {
+  .banner__holder--mobile {
+    display: none;
+  }
+  .banner__holder--desktop {
+    display: block;
+  }
+}
+
+.banner__holder--align-center * {
+  text-align: center;
+}
+
+.banner__holder--align-left * {
+  text-align: left;
+}
+
+.banner__holder--align-right * {
+  text-align: right;
+}
+
+.banner__text {
+  color: black;
+  position: relative;
+  float: left;
+  left: 50%;
+  top: 50%;
+  text-rendering: optimizeSpeed;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.banner__text--left {
+  left: 0;
+  padding-left: 5%;
+  text-align: left;
+  -webkit-transform: translate(0%, -50%);
+      -ms-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  width: 47%;
+}
+
+.banner__text--right {
+  float: right;
+  left: 0%;
+  padding-right: 5%;
+  text-align: left;
+  -webkit-transform: translate(0%, -50%);
+      -ms-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  width: 47%;
+}
+
+.banner__text--align-center * {
+  text-align: center;
+}
+
+.banner__text--align-left * {
+  text-align: left;
+}
+
+.banner__text--align-right * {
+  text-align: right;
+}
+
+@media (max-width: 591px) {
+  .banner__text--mobile {
+    display: block;
+  }
+  .banner__text--desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 591px) {
+  .banner__text--mobile {
+    display: none;
+  }
+  .banner__text--desktop {
+    display: block;
+  }
+}
+
+/* Title for banner */
+.banner__title {
+  color: black;
+  font-family: "DidotRoman", sans-serif;
+  font-size: 35px;
+  line-height: 42px;
+  letter-spacing: 0.15em;
+  margin: 0;
+  -webkit-margin-before: 0.67em;
+          margin-block-start: 0.67em;
+  -webkit-margin-after: 0.67em;
+          margin-block-end: 0.67em;
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+  text-align: inherit;
+  text-transform: uppercase;
+  text-rendering: optimizeSpeed;
+  /* Modifiers */
+}
+
+@media (max-width: 1025px) {
+  .banner__title {
+    font-size: 3vw;
+    line-height: normal;
+  }
+}
+
+.banner__title--align-left {
+  text-align: left;
+}
+
+.banner__title--align-right {
+  text-align: right;
+}
+
+.banner__title--align-center {
+  text-align: center;
+}
+
+@media (max-width: 591px) {
+  .banner__title--mobile {
+    display: block;
+  }
+  .banner__title--desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 591px) {
+  .banner__title--mobile {
+    display: none;
+  }
+  .banner__title--desktop {
+    display: block;
+  }
+}
+
+/* Blur for banner */
+.banner__blur {
+  color: black;
+  font-family: "GothamBook", "MuseoSans-300";
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  line-height: 21px;
+  padding-top: 0;
+  text-align: inherit;
+  text-rendering: optimizeSpeed;
+}
+
+@media (max-width: 1025px) {
+  .banner__blur {
+    padding-top: calc((35 / 768) * 100%);
+  }
+}
+
+@media (max-width: 768px) {
+  .banner__blur {
+    font-size: 1.6vw;
+    line-height: initial;
+  }
+}
+
+.banner__blur--white {
+  color: white;
+}
+
+.banner__blur--black {
+  color: black;
+}
+
+@media (max-width: 591px) {
+  .banner__blur--mobile {
+    display: block;
+  }
+  .banner__blur--desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 591px) {
+  .banner__blur--mobile {
+    display: none;
+  }
+  .banner__blur--desktop {
+    display: block;
+  }
+}
+
+/* SEO banner */
+.banner__seo,
+.banner__cat {
+  color: black;
+  display: block;
+  font-family: "GothamLight";
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  max-width: 1025px;
+  padding: 5px 0;
+  text-align: center;
+  text-transform: uppercase;
+  text-rendering: optimizeSpeed;
+  /* mobile */
+}
+
+@media (max-width: 591px) {
+  .banner__seo,
+  .banner__cat {
+    background-color: #eaeaea;
+    font-family: "GothamLight";
+    font-size: 15px;
+    line-height: 15px;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 591px) {
+  .banner__seo--mobile,
+  .banner__cat--mobile {
+    display: block;
+  }
+  .banner__seo--desktop,
+  .banner__cat--desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 591px) {
+  .banner__seo--mobile,
+  .banner__cat--mobile {
+    display: none;
+  }
+  .banner__seo--desktop,
+  .banner__cat--desktop {
+    display: block;
+  }
+}
+
+.banner__seo--flashsale,
+.banner__cat--flashsale {
+  background-color: #dd1324;
+}
+
+.banner__seo__title,
+.banner__cat__title {
+  font-family: "GothamLight", sans-serif;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-rendering: optimizeSpeed;
+  /* mobile */
+}
+
+@media (max-width: 591px) {
+  .banner__seo__title,
+  .banner__cat__title {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 591px) {
+  .banner__seo__title--mobile,
+  .banner__cat__title--mobile {
+    display: block;
+  }
+  .banner__seo__title--desktop,
+  .banner__cat__title--desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 591px) {
+  .banner__seo__title--mobile,
+  .banner__cat__title--mobile {
+    display: none;
+  }
+  .banner__seo__title--desktop,
+  .banner__cat__title--desktop {
+    display: block;
+  }
+}
+
+.banner__seo__title--flashsale,
+.banner__cat__title--flashsale {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'GothamBlack', 'ArialBlack';
+  letter-spacing: 11px;
+  color: white;
+  padding: 5px 0;
+  /* animation: flashColor  1000ms 2 cubic-bezier(0.13, -0.96, 0.61, 1) ;
+    -webkit-animation: flashColor  1000ms 2 cubic-bezier(0.13, -0.96, 0.61, 1);*/
+}
+
+/* Pricepoint banners */
+.pricepoint {
+  background-repeat: no-repeat;
+  background-position: top;
+  background-position-x: 50% !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 10px 0;
+}
+
+.pricepoint * {
+  color: black;
+  text-align: center;
+  text-rendering: optimizeSpeed;
+}
+
+.pricepoint--white * {
+  color: white;
+}
+
+.pricepoint--black * {
+  color: black;
+}
+
+.pricepoint--outlet {
+  background-color: #ab5866;
+}
+
+.pricepoint--outlet * {
+  font-family: 'GothamBold', 'MuseoSans-500', sans-serif;
+  color: white;
+}
+
+.pricepoint--outlet .pricepoint__catName {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 591px) {
+  .pricepoint--outlet .pricepoint__catName {
+    font-size: 30px;
+    font-size: 6vw;
+  }
+}
+
+@media (max-width: 591px) {
+  .pricepoint--outlet .pricepoint__title {
+    font-size: 24px;
+    font-size: 4.5vw;
+  }
+}
+
+.pricepoint--outlet .pricepoint__number {
+  font-size: 78px;
+  letter-spacing: 2px;
+  margin-left: 4px;
+}
+
+@media (max-width: 591px) {
+  .pricepoint--outlet .pricepoint__number {
+    font-size: 80px;
+    font-size: 18vw;
+  }
+}
+
+.pricepoint--outlet .pricepoint__subNumber,
+.pricepoint--outlet .pricepoint__symbol {
+  font-size: 44px;
+}
+
+@media (max-width: 591px) {
+  .pricepoint--outlet .pricepoint__subNumber,
+  .pricepoint--outlet .pricepoint__symbol {
+    font-size: 24px;
+    font-size: 6.5vw;
+  }
+}
+
+.pricepoint--outlet .pricepoint__text {
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.pricepoint--outlet .pricepoint__detail * {
+  font-family: 'MuseoSans-300', sans-serif;
+  font-weight: normal;
+}
+
+.pricepoint--sale {
+  background-color: #35393c;
+}
+
+.pricepoint--sale * {
+  font-family: 'GothamLight', 'MuseoSans-300', sans-serif;
+  color: white;
+}
+
+.pricepoint--sale .pricepoint__number,
+.pricepoint--sale .pricepoint__subNumber,
+.pricepoint--sale .pricepoint__symbol,
+.pricepoint--sale .pricepoint__text {
+  font-family: 'GothamLight';
+}
+
+.pricepoint--sale .pricepoint__catName {
+  font-family: 'GothamMedium';
+  font-size: 35px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 5px auto 14px;
+  margin-top: 20px;
+}
+
+@media (max-width: 591px) {
+  .pricepoint--sale .pricepoint__catName {
+    font-size: 32px;
+    font-size: 8vw;
+  }
+}
+
+.pricepoint--sale .pricepoint__number {
+  font-size: 100px;
+  letter-spacing: -2px;
+}
+
+@media (max-width: 591px) {
+  .pricepoint--sale .pricepoint__number {
+    font-size: 80px;
+    font-size: 18vw;
+    letter-spacing: 0px;
+  }
+}
+
+.pricepoint--sale .pricepoint__subNumber,
+.pricepoint--sale .pricepoint__symbol {
+  font-size: 45px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 591px) {
+  .pricepoint--sale .pricepoint__subNumber,
+  .pricepoint--sale .pricepoint__symbol {
+    font-size: 24px;
+    font-size: 6vw;
+  }
+}
+
+.pricepoint--sale .pricepoint__text {
+  font-size: 18px;
+}
+
+@media (max-width: 591px) {
+  .pricepoint--sale .pricepoint__text {
+    font-size: 24px;
+    font-size: 5vw;
+  }
+}
+
+.pricepoint--sale .pricepoint__detail * {
+  font-family: 'MuseoSans-300', sans-serif;
+  font-weight: normal;
+}
+
+.pricepoint--clearance {
+  background-color: #ff3741;
+}
+
+.pricepoint--clearance .pricepoint__row {
+  margin: 0px auto 10px;
+}
+
+.pricepoint--clearance * {
+  font-family: 'GothamBold', 'MuseoSans-500', sans-serif;
+  text-transform: uppercase;
+  color: white;
+}
+
+.pricepoint--clearance .pricepoint__title {
+  font-size: 48px;
+  letter-spacing: 2px;
+  padding-top: 10px;
+}
+
+@media (max-width: 591px) {
+  .pricepoint--clearance .pricepoint__title {
+    font-size: 32px;
+    font-size: 7vw;
+    padding-top: 10px;
+  }
+}
+
+.pricepoint--clearance .pricepoint__catName {
+  font-size: 26px;
+  margin: 10px auto 10px;
+}
+
+@media (max-width: 591px) {
+  .pricepoint--clearance .pricepoint__catName {
+    font-size: 24px;
+    font-size: 4vw;
+  }
+}
+
+.pricepoint--clearance .pricepoint__number {
+  font-size: 58px;
+}
+
+@media (max-width: 591px) {
+  .pricepoint--clearance .pricepoint__number {
+    font-size: 48px;
+    font-size: 12vw;
+    letter-spacing: 0px;
+  }
+}
+
+.pricepoint--clearance .pricepoint__subNumber,
+.pricepoint--clearance .pricepoint__symbol {
+  font-size: 34px;
+}
+
+@media (max-width: 591px) {
+  .pricepoint--clearance .pricepoint__subNumber,
+  .pricepoint--clearance .pricepoint__symbol {
+    font-size: 24px;
+    font-size: 6vw;
+  }
+}
+
+.pricepoint--clearance .pricepoint__text {
+  font-size: 15px;
+  text-transform: lowercase;
+}
+
+@media (max-width: 591px) {
+  .pricepoint--clearance .pricepoint__text {
+    font-size: 16px;
+    font-size: 3vw;
+  }
+}
+
+.pricepoint--clearance .pricepoint__detail {
+  padding-bottom: 10px;
+}
+
+@media (max-width: 591px) {
+  .pricepoint--clearance .pricepoint__detail {
+    font-size: 2.5vw;
+  }
+}
+
+.pricepoint--clearance .pricepoint__detail * {
+  font-family: 'MuseoSans-300', sans-serif;
+  font-weight: normal;
+  text-transform: none;
+}
+
+@media (max-width: 591px) {
+  .pricepoint--clearance .pricepoint__detail * {
+    font-size: 11px;
+  }
+}
+
+/* category name */
+/* pricepoint titles */
+.pricepoint__title,
+.pricepoint__catName {
+  display: block;
+  font-size: 25px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+@media (max-width: 591px) {
+  .pricepoint__title--mobile,
+  .pricepoint__catName--mobile {
+    display: block;
+  }
+  .pricepoint__title--desktop,
+  .pricepoint__catName--desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 591px) {
+  .pricepoint__title--mobile,
+  .pricepoint__catName--mobile {
+    display: none;
+  }
+  .pricepoint__title--desktop,
+  .pricepoint__catName--desktop {
+    display: block;
+  }
+}
+
+.pricepoint__title--align-left,
+.pricepoint__catName--align-left {
+  text-align: left;
+}
+
+.pricepoint__title--align-right,
+.pricepoint__catName--align-right {
+  text-align: right;
+}
+
+.pricepoint__title--align-center,
+.pricepoint__catName--align-center {
+  text-align: center;
+}
+
+/* rows and columns */
+.pricepoint__row {
+  clear: both;
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 20px auto 20px;
+  position: relative;
+}
+
+.pricepoint__col {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: left;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+}
+
+.pricepoint__detail {
+  clear: both;
+  display: block;
+  font-size: 12px;
+  font-weight: normal;
+  margin: 5px auto;
+  text-align: center;
+  text-transform: none;
+  width: 100%;
+  font-family: 'MuseoSans-300', sans-serif;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.pricepoint__detail span,
+.pricepoint__detail a {
+  font-weight: normal;
+  text-decoration: underline;
+}
+
+.pricepoint__detail span:hover,
+.pricepoint__detail a:hover {
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .pricepoint__detail {
+    font-size: 11px;
+  }
+}
+
+.pricepoint__number {
+  font-size: 78px;
+  font-family: 'GothamBold';
+  letter-spacing: 2px;
+  margin-left: 4px;
+}
+
+.pricepoint__subNumber {
+  font-family: 'GothamBold';
+  font-size: 44px;
+}
+
+.pricepoint__symbol {
+  font-family: 'GothamBold';
+  font-size: 44px;
+}
+
+.pricepoint__text {
+  font-family: 'GothamBold';
+  font-size: 30px;
+}
+
+.pricepoint__number,
+.pricepoint__subNumber,
+.pricepoint__symbol,
+.pricepoint__text,
+.pricepoint__col {
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.pricepoint__number--auto,
+.pricepoint__subNumber--auto,
+.pricepoint__symbol--auto,
+.pricepoint__text--auto,
+.pricepoint__col--auto {
+  height: auto;
+  line-height: normal;
+}
+
+@keyframes flashColor {
+  0% {
+    color: white;
+  }
+  25% {
+    color: black;
+  }
+  50% {
+    color: white;
+  }
+  75% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@-webkit-keyframes flashColor {
+  0% {
+    color: white;
+  }
+  25% {
+    color: black;
+  }
+  50% {
+    color: white;
+  }
+  75% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
+}

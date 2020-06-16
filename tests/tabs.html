@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Landing Page</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta content="True" name="HandheldFriendly" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=5" />
+  <meta name="nosnippets" />
+  <meta name="theme-color" content="#85031b">
+  <meta name="description" content="Landing Page" />
+
+    <!-- !!! DO NOT INCLUDE IN BCC !!! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <!-- !!! DO NOT INCLUDE IN BCC !!! -->
+ 
+	<link rel="stylesheet" type="text/css" href="../00-prod/fonts.min.css" />
+	<link rel="stylesheet" type="text/css" href="../00-prod/lci.combined.min.css" />
+	
+	<!-- Tabs system /ignore -->
+	<link rel="stylesheet" type="text/css" href="../css/ignore/tabs.css" />
+
+</head>
+
+
+<body>
+
+
+  <main class='page'>
+  
+  <div class="instruction">
+	<h2>General instructions</h2>
+    <ul>
+	  <li>Try to keep image size under 1000KB (<em>if possible</em>) as it's longer to load on the website</li>
+	  <li>Try to do a slide per link for landing page</li>
+	  <li>Do not put CTA on desktop images. Put them on the mobile.</li>
+	  <li>When you do changes, keep the same name as the previous or add '-v2' at the end. Do not rename them.</li>
+	  <li>When doing a new page, don't name them as the same of the previous one, change the date.</li>
+	  <li> How to name pictures : 
+		<ul>
+		  <li>Try to follow the naming convention on each components as it's easier for the changes</li>
+		  <li>Privilege '-' instead of '_' on the pciture names, it's easier to read and less prone to mistakes</li>
+		  <li>Keep the same name for each language and devices, only change the locale on the picture and </li>
+		  <li>Use locale (-en) and (-fr). If there's US version use same name with (-us) instead of the '-en-'</li>
+		</ul>
+	  </li>
+	  <li>Try to minimize the use of gifs (<em>usually too heavy for the effects wanted</em>) and image-maps (<em>longer to do, not always responsive friendly</em>)</li>
+      <li>Do not put margins on the slides. Except if the CTA is at the bottom of the page, then please add a little white space, usually the CTA height +/- 50px.</li>
+      <li>Before sending for coding, make sure that every pictures has been proofed, and it follow the right format and naming convention.</li>
+	  <li>Every components on this page can be added to the landing page, banners, contests pages, forms, etc...</li>
+	  <li>Customize or new components can be made within 3 to 5 working days (depending on the complexity) after resquested with no exception </li>
+	</ul>
+	  
+	  <ul>
+	    <li>Path folder : </li>
+	    <li>Current CSS version : 1.0.0</li>
+	    <li>Current JS version : 1.0.0</li>
+	  </ul>
+	  
+	</ul>
+  </div>
+  
+ <!-- START - DRAGBALLS -->	
+ 
+  <!-- PANEL -->
+  <h1 class="instruction">Dragballs</h1>
+  <div class="tabPanel-widget">
+    
+	<label for="tab-1" tabindex="0"></label>
+      <input id="tab-1" type="radio" name="tabs" checked="true" aria-hidden="true">
+	<!-- Design -->
+	<h2>Design</h2>
+    <div class="innerTab">
+	<p>Drgaball usually only appears on mobile. They can be drag</p> 
+	
+	<h3>Image Sizes  </h3>
+      <ul>
+	    <li>Images should all be <strong>same height</strong></li>
+		<li>Jpeg</li>
+		<li>Regular size</li>
+	  </ul>
+	  
+	  <h3>Naming convention</h3>
+	  <p>drag_date_locale<p>
+      
+    </div>
+	
+	
+    <label for="tab-2" tabindex="0"></label>
+	<input id="tab-2" type="radio" name="tabs" aria-hidden="true">
+    <h2>Tech</h2>
+    <div>
+      <p>
+		<ul>
+		  <li>Hidden by default on desktop. Only visible on mobile</li>
+		  <li>Script is already incorporated in the lci js file</li>
+		  <li>Must add the <strong>dragscroll</strong> class into the <strong>dragballs__slider</strong> element</li>
+		</ul>
+	  </p>
+      
+    </div>
+	
+	
+	
+	
+	
+  </div>
+ <!-- END PANNEL --> 
+ 
+     <!-- dragballs -->
+    <section class="dragballs dragballs--show-all">
+      <div class="dragballs__slider dragscroll">
+        <div class="dragballs__slide" data-link="Women"><a
+            href="https://www.lechateau.com/style/jump/Women/category/catwfr10001">
+            <img src="https://lechateau.scene7.com/is/image/LeChateau/stopslider-010220-en_01?$jpeg-prog$&ver=1"
+              alt="Women" /></a></div>
+        <div class="dragballs__slide" data-link="Men"><a
+            href="https://www.lechateau.com/style/jump/HOMMES/category/catmfr20001">
+            <img src="https://lechateau.scene7.com/is/image/LeChateau/stopslider-010220-en_02?$jpeg-prog$&ver=1"
+              alt="Men" /></a></div>
+        <div class="dragballs__slide" data-link="Shoes"><a
+            href="https://www.lechateau.com/style/jump/Shoes+/category/catsfr50001">
+            <img src="https://lechateau.scene7.com/is/image/LeChateau/stopslider-010220-en_03?$jpeg-prog$&ver=1"
+              alt="Shoes" /></a></div>
+        <div class="dragballs__slide" data-link="Women Sweaters"><a
+            href="https://www.lechateau.com/style/jump/Sweaters+%26+Cardigans/category/cat43770731">
+            <img src="https://lechateau.scene7.com/is/image/LeChateau/stopslider-010220-en_06?$jpeg-prog$&ver=1"
+              alt="Women Sweaters" /></a></div>
+        <div class="dragballs__slide" data-link="Men Sweaters"><a
+            href="https://www.lechateau.com/style/jump/Sweaters+%26+Cardigans/category/catmfr20027">
+            <img src="https://lechateau.scene7.com/is/image/LeChateau/stopslider-010220-en_07?$jpeg-prog$&ver=1"
+              alt="Men Sweaters" /></a></div>
+        <div class="dragballs__slide" data-link="Dresses"><a
+            href="https://www.lechateau.com/style/jump/Dress+Shop/category/catwfr10022">
+            <img src="https://lechateau.scene7.com/is/image/LeChateau/stopslider-010220-en_08?$jpeg-prog$&ver=1"
+              alt="Dresses" /></a></div>
+        <div class="dragballs__slide" data-link="Accessories"><a
+            href="https://www.lechateau.com/style/jump/Jewellery/category/cat38030787">
+            <img src="https://lechateau.scene7.com/is/image/LeChateau/stopslider-010220-en_09?$jpeg-prog$&ver=1"
+              alt="Accessories" /></a></div>
+        <div class="dragballs__slide" data-link="Bags"><a
+            href="https://www.lechateau.com/style/jump/Handbags+%26+Wallets/category/cat130018">
+            <img src="https://lechateau.scene7.com/is/image/LeChateau/stopslider-010220-en_10?$jpeg-prog$&ver=1"
+              alt="Bags" /></a></div>
+      </div>
+    </section>
+	
+<!-- END DRAGBALLS -->	
+
+
+
+
+ <!-- START - DRAGBALLS -->	
+ 
+  <!-- PANEL -->
+  <h1 class="instruction">Regular Slide</h1>
+  <div class="tabPanel-widget">
+    
+	<label for="tab-1-a" tabindex="0"></label>
+      <input id="tab-1-a" type="radio" name="tabs" checked="true" aria-hidden="true">
+	<!-- Design -->
+	<h2>Design</h2>
+    <div class="innerTab">
+	<p>Do not put CTA on desktop images. Put them on the mobile.</p> 
+	<h3>Image Sizes : </h3>
+      <ul>
+	    <li>Desktop: 1300px;  815px (for Outlet, Sale, Flash Sale)</li>
+		<li>Mobile: 591px</li>
+	  </ul>
+	  
+	  <h3>Naming convention</h3>
+	  <em>lp_category_date_locale</em>
+      
+    </div>
+	
+	
+    <label for="tab-2-a" tabindex="0"></label>
+	<input id="tab-2-a" type="radio" name="tabs" aria-hidden="true">
+    <h2>Tech</h2>
+    <div>
+      <p>Represents a generic document or application section. In this context, a section is a thematic grouping of content, typically with a header, possibly with a footer. Examples include chapters in a book, the various tabbed pages in a tabbed dialog box, or the numbered sections of a thesis. A web site's home page could be split into sections for an introduction, news items, contact information.</p>
+      
+    </div>
+	
+	
+    <label for="tab-3-a" tabindex="0"></label>
+    <input id="tab-3-a" type="radio" name="tabs" aria-hidden="true">
+    <h2>Code</h2>
+    <div>
+      <p>The source element allows authors to specify multiple alternative media resources for media elements. It does not represent anything on its own. The src attribute gives the address of the media resource. The value must be a valid non-empty URL potentially surrounded by spaces. This attribute must be present.</p>
+    
+    </div>
+	
+	
+	
+  </div>
+ <!-- END PANNEL --> 
+ 
+  <!-- START - ROW -->
+    <section class='row row--margin-0'>
+
+      <!-- cta -->
+      <div class="row__cta">
+        <a href="#" title="" class="cta" style="left:38%; top: 34%;">
+          SHOP BLAZERS
+        </a>
+      </div>
+
+      <div class='row__image'>
+        <a href='' title=''>
+          <picture>
+            <!-- [if IE 9]><audio><![endif] -->
+            <!-- Mobile -->
+            <source media="(max-width: 768px)"
+              srcset="https://lechateau.scene7.com/is/image/LeChateau/lechateau-01-01-20-en-m_06?$jpeg-prog$">
+
+            <!-- Desktop -->
+            <source media="(min-width: 768px)"
+              srcset="https://lechateau.scene7.com/is/image/LeChateau/lechateau-01-01-20-en-d_05?$jpeg-prog$">
+            <!-- [if IE 9]></audio><![endif] -->
+
+            <img src="https://lechateau.scene7.com/is/image/LeChateau/lechateau-01-01-20-en-m_06?$jpeg-prog$" alt=""
+              decoding="async" />
+
+          </picture>
+        </a>
+      </div>
+    </section>
+    <!-- END - ROW -->
+
+
+</main>
+
+
+
+</body>
+
+
+<script src="../00-prod/lci-combined.min.js"></script>
+
+</html>

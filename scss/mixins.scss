@@ -1,0 +1,300 @@
+/*////////////////////////
+  - @banner-responsive : breakpoint for the landing pages
+  - @lp-responsive : breakpoint for the landing pages
+  - @align : text-alignment
+  - @font-color : for different text colors
+  - @font-family: add all font available
+  - @font-modifiers :  (include : font-color)
+  - @font-size : font-size(48px, 32px, 25px, 18px, 14px)
+  - @mixin font-responsive(5vw, 4vw, 3vw, 2vw, 1vw)
+  - @margins
+  - @margins-desktop : reponsive margins
+  - @margins-mobile
+  - @margins-all (margins, margins-desktop, font-modifiers)
+//////////////////////*/
+
+$tablet : 768px;
+$mobile : 591px;
+$max-desktop : 1300px;
+$small-lp : 815px;
+$fonts : "MuseoSans-300", "GothamBook", "GothamMedium", "DidotBold", "GothamBold", "GothamBlack";
+// loop example
+// @each $color, $value in $colors {
+//  --#{$color}: #{$value};
+//}
+
+
+/* breakpoints for elements */
+@mixin banner-responsive {
+
+  // mobile
+  @media (max-width: $mobile) {
+    &--mobile {
+      display: block;
+    }
+
+    &--desktop {
+      display: none;
+    }
+  }
+
+  // desktop
+  @media (min-width: $mobile) {
+    &--mobile {
+      display: none;
+    }
+
+    &--desktop {
+      display: block;
+    }
+  }
+}
+
+// breaking points for landing pages
+@mixin lp-responsive {
+
+    // mobile
+    @media (max-width: $tablet) {
+      &--show-mobile,
+      &--hide-desktop,
+      &--mobile {
+        display: block;
+      }
+  
+      &--show-desktop,
+      &--hide-mobile,
+      &--desktop {
+        display: none;
+      }
+
+      &--show-all {
+        display: block;
+      }
+  }
+
+  // desktop
+  @media (min-width: $tablet) {
+    &--show-mobile,
+    &--hide-desktop,
+    &--mobile {
+      display: none;
+    }
+
+    &--show-desktop,
+    &--hide-mobile,
+    &--desktop {
+      display: block;
+    }
+  }
+
+  &--show-all {
+    display: block;
+  }
+
+}
+
+
+/* alignment for elements */
+@mixin align {
+  &--align {
+    &-left {
+      text-align: left;
+    }
+
+    &-right {
+      text-align: right;
+    }
+
+    &-center {
+      text-align: center;
+    }
+  }
+}
+
+// font color
+@mixin font-color {
+  &--white {
+    color: white;
+  }
+
+  &--black {
+    color: black;
+  }
+
+  &--red {
+    color: #F00;
+  }
+
+  &--grey {
+    color: #333;
+  }
+}
+
+@mixin font-family {
+  @each $font in $fonts {
+      &--#{$font} {
+       font-family: $font, "Arial", "Heveltica", sans-serif;
+      }
+    }
+}
+
+// Font modifiers
+@mixin font-modifiers {
+  &--capitalize {
+    text-transform: capitalize;
+  }
+
+  &--lowercase {
+    text-transform: lowercase;
+  }
+
+  &--uppercase {
+    text-transform: uppercase;
+  }
+
+  &--none {
+    text-transform: none;
+  }
+
+  &--bold {
+    font-weight: bold;
+  }
+
+  &--normal {
+    font-weight: normal;
+  }
+  
+  &--light {
+    font-weight: lighter;
+  }
+
+  // font-size
+  @for $i from 5 through 24 {
+    &--size-#{$i * 2} {
+      font-size: 2px * $i;
+    }
+  }
+
+  // include the other mixins
+  @include font-color;
+  @include font-family;
+}
+
+
+// font-size function (5 values)
+@mixin font-size($a: 48px, $b: 32px, $c: 25px, $d: 18px, $e: 14px) {
+  &--bigger {
+    font-size: $a;
+  }
+
+  &--big {
+    font-size: $b;
+  }
+
+  &--regular {
+    font-size: $c;
+  }
+
+  &--small {
+    font-size: $d;
+    letter-spacing: 1px;
+  }
+
+  &--smaller {
+    font-size: $e;
+    letter-spacing: 1px;
+  }
+}
+
+@mixin font-responsive($a: 5vw, $b: 4vw, $c: 3vw, $d: 2vw, $e: 1vw) {
+  @media (max-width: 1025px) {
+  &--responsive {
+    font-size: 14px;
+    font-size: $c !important;
+  
+  &-bigger {
+    font-size: 24px;
+    font-size: $a !important;
+  }
+
+  &-big {
+    font-size: 18px;
+    font-size: $b !important;
+  }
+
+  &-small {
+    font-size: 12px;
+    font-size: $d !important; 
+  }
+
+  &-smaller {
+    font-size: 11px;
+    font-size: $e !important;
+    
+  }
+ }
+}
+}
+
+
+// margins
+@mixin margins {
+  @for $i from 0 through 20 {
+    &--margin-#{$i * 5} {
+      margin-top: 5px * $i;
+    }
+  }
+}
+
+// margin desktop 
+@mixin margins-desktop {
+    @for $i from 0 through 20 {
+      &--margin-#{$i * 5}-desktop {
+        margin-top: 5px * $i;
+      //  @media (max-width: $max-desktop) and (min-width: $tablet) {
+      //    margin-top: calc(5px * $i) ; 
+     //   }
+      }
+
+    }
+  }
+
+// responsive margins
+@mixin margins-responsive {
+  @for $i from 0 through 20 {
+    &--margin-#{$i * 5}-responsive {
+      margin-top: 5px * $i;
+     @media (max-width: $max-desktop) and (min-width: $tablet) {
+        margin-top: calc( ((5 * #{$i}) / 1300) * 100% ); 
+      }
+      @media (max-width: $tablet) {
+        margin-top: calc( ((5 * #{$i}) / 591) * 100%);
+      }
+    }
+  }
+}
+
+
+// margins
+@mixin margins-mobile {
+  @for $i from 0 through 20 {
+    &--margin-#{$i * 5}-mobile {
+      margin-top: 5px * $i;
+    }
+  }
+}
+
+@mixin margins-all {
+  @include margins;
+
+  // desktop
+  @media (min-width: $tablet) {
+    @include margins-desktop;
+  }
+
+  // mobile
+  @media (max-width: $tablet) {
+    @include margins-mobile;
+  }
+}
+

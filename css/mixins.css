@@ -1,0 +1,16 @@
+/*////////////////////////
+  - @banner-responsive : breakpoint for the landing pages
+  - @lp-responsive : breakpoint for the landing pages
+  - @align : text-alignment
+  - @font-color : for different text colors
+  - @font-family: add all font available
+  - @font-modifiers :  (include : font-color)
+  - @font-size : font-size(48px, 32px, 25px, 18px, 14px)
+  - @mixin font-responsive(5vw, 4vw, 3vw, 2vw, 1vw)
+  - @margins
+  - @margins-desktop : reponsive margins
+  - @margins-mobile
+  - @margins-all (margins, margins-desktop, font-modifiers)
+//////////////////////*/
+/* breakpoints for elements */
+/* alignment for elements */

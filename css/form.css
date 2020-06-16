@@ -1,0 +1,344 @@
+/*///////////////////
+  Table of content
+  0. Variables 
+
+///////////////////*/
+/*********
+Variables
+*********/
+.formulaire {
+  display: block;
+  position: relative;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.formulaire > .formulaire__row:nth-child(1) {
+  margin-top: 30px;
+}
+
+/* input row  */
+.formulaire__row {
+  display: block;
+  position: relative;
+  margin-bottom: 20px;
+  width: 98%;
+  margin-top: 25px;
+  /* mobile */
+  /* half row */
+}
+
+@media (max-width: 768px) {
+  .formulaire__row {
+    width: 95%;
+    margin: auto;
+    margin-top: 45px;
+  }
+}
+
+.formulaire__row--half {
+  width: 48.3%;
+  display: inline-block;
+  margin-right: 1%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* mobile */
+}
+
+@media (max-width: 768px) {
+  .formulaire__row--half {
+    display: block;
+    width: 95%;
+    margin: 45px auto 0;
+  }
+}
+
+/* label */
+.formulaire__label {
+  color: #666666;
+  font-size: 15px;
+  font-weight: 300;
+  cursor: pointer;
+  font-family: "MuseoSans-300";
+}
+
+.formulaire__label--anim {
+  left: 10px;
+  position: absolute;
+  pointer-events: none;
+  top: 12px;
+  -webkit-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+.formulaire__checkbox,
+.formulaire__radio {
+  display: none !important;
+}
+
+.formulaire__checkbox + .formulaire__label,
+.formulaire__radio + .formulaire__label {
+  cursor: pointer;
+  font-family: "MuseoSans-300";
+  font-size: 15px;
+  text-align: center;
+  color: #666666;
+  -webkit-box-shadow: 0 0 0 2px white inset;
+          box-shadow: 0 0 0 2px white inset;
+  -webkit-transition: color 0.2s, background 0.2s, -webkit-box-shadow 0.2s;
+  transition: color 0.2s, background 0.2s, -webkit-box-shadow 0.2s;
+  -o-transition: color 0.2s, box-shadow 0.2s, background 0.2s;
+  transition: color 0.2s, box-shadow 0.2s, background 0.2s;
+  transition: color 0.2s, box-shadow 0.2s, background 0.2s, -webkit-box-shadow 0.2s;
+}
+
+.formulaire__checkbox:checked + .formulaire__label:before,
+.formulaire__radio:checked + .formulaire__label:before {
+  content: "\f00c";
+  font-family: 'fontawesome';
+  font-size: 17px;
+  text-align: center;
+  color: #666666;
+  -webkit-box-shadow: 0 0 0 2px white inset;
+          box-shadow: 0 0 0 2px white inset;
+  -webkit-transition: color 0.2s,background 0.2s,-webkit-box-shadow 0.2s;
+  transition: color 0.2s,background 0.2s,-webkit-box-shadow 0.2s;
+  -o-transition: color 0.2s,box-shadow 0.2s, background 0.2s;
+  transition: color 0.2s,box-shadow 0.2s, background 0.2s;
+  transition: color 0.2s,box-shadow 0.2s, background 0.2s,-webkit-box-shadow 0.2s;
+}
+
+.formulaire__message {
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  text-align: right;
+}
+
+select.formulaire__select,
+.formulaire__select:not(.ui-datepicker-month):not(.ui-datepicker-year) {
+  border: 1px solid #666666;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 3px;
+  color: #666666;
+  -webkit-appearance: menulist-button;
+  font-size: 15px;
+  font-family: "MuseoSans-300", sans-serif;
+}
+
+select.formulaire__select > option,
+.formulaire__select:not(.ui-datepicker-month):not(.ui-datepicker-year) > option {
+  color: #666666;
+}
+
+select.formulaire__select:after,
+.formulaire__select:not(.ui-datepicker-month):not(.ui-datepicker-year):after {
+  content: '+';
+}
+
+/*****************
+  Text input
+****************/
+.formulaire__input {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #0a0a0a;
+  font-size: 15px;
+  font-family: "GothamBook", "Arial Black", sans-serif;
+  padding: 10px 0px 10px 10px;
+  display: block;
+  outline: none;
+  border: none;
+  width: 100%;
+  border: 1px solid #a6a6a6;
+  border-radius: 3px;
+}
+
+.formulaire__input:focus {
+  border-color: #0a0a0a !important;
+  outline: 0;
+  -webkit-box-shadow: 0 0 6px 1px rgba(42, 47, 51, 0.25);
+          box-shadow: 0 0 6px 1px rgba(42, 47, 51, 0.25);
+}
+
+/* focus state */
+.formulaire__input:focus ~ .formulaire__label,
+.formulaire__input.used ~ .formulaire__label {
+  top: -20px;
+  font-size: 13px;
+  color: #0a0a0a;
+}
+
+/* error and success state */
+.formulaire__input.good ~ .formulaire__label {
+  color: #049204;
+  -webkit-transition: color 0.5s ease 0.5s;
+  -o-transition: color 0.5s ease 0.5s;
+  transition: color 0.5s ease 0.5s;
+}
+
+.formulaire__input.good ~ .formulaire__bar:before,
+.formulaire__input.good ~ .formulaire__bar:after {
+  width: 50%;
+  background: #049204;
+  -webkit-animation-name: barSuccess;
+          animation-name: barSuccess;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.formulaire__input.error ~ .formulaire__label {
+  color: #e40303;
+  -webkit-transition: color 0.5s ease 0.5s;
+  -o-transition: color 0.5s ease 0.5s;
+  transition: color 0.5s ease 0.5s;
+}
+
+.formulaire__input.error ~ .formulaire__bar:before,
+.formulaire__input.error ~ .formulaire__bar:after {
+  width: 50%;
+  background: #e40303;
+  -webkit-animation-name: barError;
+          animation-name: barError;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+.formulaire__input.error.missing ~ .formulaire__bar:before,
+.formulaire__input.error.missing ~ .formulaire__bar:after {
+  -webkit-animation-name: barErrorMissing;
+          animation-name: barErrorMissing;
+}
+
+.formulaire__input.good,
+.formulaire__input.error {
+  color: #0a0a0a;
+}
+
+/*****************
+  Bar animation
+****************/
+.formulaire__bar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.formulaire__bar:before, .formulaire__bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: -1px;
+  position: absolute;
+  background: #0a0a0a;
+  -webkit-transition: 0.2s ease all;
+  -o-transition: 0.2s ease all;
+  transition: 0.2s ease all;
+}
+
+.formulaire__bar:before {
+  left: 50%;
+}
+
+.formulaire__bar:after {
+  right: 50%;
+}
+
+/******************
+  Animations
+  ******************/
+/* animations */
+@-webkit-keyframes barSuccess {
+  0% {
+    width: 50%;
+    background: #0a0a0a;
+  }
+  50% {
+    width: 0%;
+    background: #0a0a0a;
+  }
+  100% {
+    width: 50%;
+  }
+}
+@keyframes barSuccess {
+  0% {
+    width: 50%;
+    background: #0a0a0a;
+  }
+  50% {
+    width: 0%;
+    background: #0a0a0a;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+@-webkit-keyframes barError {
+  0% {
+    width: 50%;
+    background: #e40303;
+  }
+  50% {
+    width: 0%;
+    background: #e40303;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes barError {
+  0% {
+    width: 50%;
+    background: #e40303;
+  }
+  50% {
+    width: 0%;
+    background: #e40303;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+@-webkit-keyframes barErrorMissing {
+  0% {
+    width: 0%;
+    background: #e40303;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes barErrorMissing {
+  0% {
+    width: 0%;
+    background: #e40303;
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+@-webkit-keyframes entrySuccess {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes entrySuccess {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
